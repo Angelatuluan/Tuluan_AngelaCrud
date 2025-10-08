@@ -1,4 +1,0 @@
-- [ ] Update UserController.php: cast page to int, dynamically set url and page_delimiter based on q, set theme to 'custom' with custom classes matching view CSS.
-- [ ] Update UserModel.php: apply LIKE filters only when q is not empty.
-- [ ] Update app/views/user/view.php: adjust CSS selectors to properly style the pagination links (e.g., target .page-link instead of .pagination-btn).
-- [ ] Test pagination and search functionality.

@@ -83,12 +83,5 @@ define('PUBLIC_DIR', $public_folder);
  * Setup done? Then Hurray!
  * ------------------------------------------------------
  */
-
-$customSessionPath = __DIR__ . "/tmp";  // tmp folder inside your project root
-if (!is_dir($customSessionPath)) {
-    mkdir($customSessionPath, 0777, true);
-}
-session_save_path($customSessionPath);
-
 require_once SYSTEM_DIR . 'kernel/LavaLust.php';
 ?>
