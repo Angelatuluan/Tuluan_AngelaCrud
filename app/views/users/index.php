@@ -17,60 +17,25 @@
 
     body {
       min-height: 100vh;
-      background: #0f0f1a;
-      color: #fff;
+      background: linear-gradient(135deg, #f7f4ff 0%, #ebe3ff 100%);
+      color: #333;
       overflow-x: hidden;
-      position: relative;
-    }
-
-    /* Floating background circles (same as register page) */
-    .circles {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      z-index: 0;
-    }
-
-    .circles li {
-      position: absolute;
-      display: block;
-      list-style: none;
-      width: 25px;
-      height: 25px;
-      background: rgba(255, 255, 255, 0.1);
-      animation: animate 20s linear infinite;
-      bottom: -150px;
-      border-radius: 50%;
-    }
-
-    .circles li:nth-child(1) { left: 25%; width: 80px; height: 80px; animation-duration: 15s; }
-    .circles li:nth-child(2) { left: 10%; width: 20px; height: 20px; animation-duration: 10s; }
-    .circles li:nth-child(3) { left: 70%; width: 20px; height: 20px; animation-duration: 20s; }
-    .circles li:nth-child(4) { left: 40%; width: 60px; height: 60px; animation-duration: 18s; }
-    .circles li:nth-child(5) { left: 65%; width: 20px; height: 20px; animation-duration: 12s; }
-    .circles li:nth-child(6) { left: 75%; width: 110px; height: 110px; animation-duration: 25s; }
-    .circles li:nth-child(7) { left: 35%; width: 150px; height: 150px; animation-duration: 35s; }
-    .circles li:nth-child(8) { left: 50%; width: 25px; height: 25px; animation-duration: 45s; }
-    .circles li:nth-child(9) { left: 20%; width: 15px; height: 15px; animation-duration: 11s; }
-    .circles li:nth-child(10){ left: 85%; width: 150px; height: 150px; animation-duration: 30s; }
-
-    @keyframes animate {
-      0% { transform: translateY(0) rotate(0deg); opacity: 1; border-radius: 0; }
-      100% { transform: translateY(-1000px) rotate(720deg); opacity: 0; border-radius: 50%; }
     }
 
     .dashboard-container {
       position: relative;
       max-width: 1200px;
-      margin: 80px auto;
+      margin: 60px auto;
       padding: 40px;
-      background: rgba(255, 255, 255, 0.07);
-      border-radius: 20px;
-      backdrop-filter: blur(18px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
-      z-index: 1;
+      background: #ffffff;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(120, 90, 200, 0.15);
+      transition: 0.3s ease;
+    }
+
+    .dashboard-container:hover {
+      box-shadow: 0 12px 35px rgba(120, 90, 200, 0.2);
+      transform: translateY(-2px);
     }
 
     .dashboard-header {
@@ -81,70 +46,63 @@
     }
 
     .dashboard-header h2 {
-      font-size: 2em;
-      font-weight: 700;
-      color: #00ffa3;
-      text-shadow: 0 0 12px #00ffa3;
+      font-size: 1.9em;
+      font-weight: 600;
+      color: #5b3cc4;
     }
 
     .logout-btn {
       padding: 10px 18px;
       border: none;
       border-radius: 8px;
-      background: linear-gradient(90deg, #ff416c, #ff4b2b);
-      color: #fff;
+      background: linear-gradient(135deg, #7b5cf7, #b57aff);
+      color: white;
       font-weight: 600;
-      box-shadow: 0 0 10px rgba(255, 75, 43, 0.5);
       transition: 0.3s;
     }
+
     .logout-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 25px rgba(255, 65, 108, 0.8);
+      background: linear-gradient(135deg, #6942f5, #a964ff);
+      box-shadow: 0 4px 12px rgba(123, 92, 247, 0.3);
+      transform: translateY(-1px);
     }
 
     .user-status {
-      background: rgba(0, 255, 255, 0.1);
-      border: 1px solid rgba(0, 255, 255, 0.2);
+      background: #f3ecff;
+      border-left: 4px solid #7b5cf7;
       padding: 12px 18px;
-      border-radius: 10px;
+      border-radius: 8px;
       margin-bottom: 25px;
-      color: #00e5ff;
+      color: #5b3cc4;
       font-weight: 500;
     }
 
     .user-status.error {
-      background: rgba(255, 65, 108, 0.1);
-      border-color: rgba(255, 65, 108, 0.3);
-      color: #ff416c;
+      background: #ffebee;
+      border-left: 4px solid #f44336;
+      color: #c62828;
     }
 
     .table-card {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(12px);
-      border-radius: 15px;
+      background: #ffffff;
+      border-radius: 12px;
       padding: 25px;
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
-    }
-
-    table {
-      width: 100%;
-      text-align: center;
-      border-collapse: collapse;
-      color: #fff;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     }
 
     th {
-      background: linear-gradient(90deg, #00ffa3, #00e5ff);
-      color: #0f0f1a;
+      background: #f3ecff;
+      color: #5b3cc4;
       text-transform: uppercase;
       font-weight: 600;
       padding: 12px;
+      border-bottom: 2px solid #e0d6ff;
     }
 
     td {
-      background: rgba(255,255,255,0.05);
       padding: 10px;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid #eee;
+      vertical-align: middle;
     }
 
     a.btn-action {
@@ -156,23 +114,25 @@
       font-weight: 500;
       transition: 0.3s;
       margin: 0 2px;
+      display: inline-block;
     }
 
     a.btn-update {
-      background: linear-gradient(90deg, #00ffa3, #00e5ff);
-      color: #0f0f1a;
-      box-shadow: 0 0 10px rgba(0,255,255,0.4);
+      background: linear-gradient(135deg, #7b5cf7, #b57aff);
     }
+
     a.btn-update:hover {
-      box-shadow: 0 0 20px rgba(0,255,255,0.8);
+      background: linear-gradient(135deg, #6942f5, #a964ff);
+      box-shadow: 0 4px 12px rgba(123, 92, 247, 0.25);
     }
 
     a.btn-delete {
-      background: linear-gradient(90deg, #ff416c, #ff4b2b);
-      box-shadow: 0 0 10px rgba(255,65,108,0.4);
+      background: linear-gradient(135deg, #e53935, #f44336);
     }
+
     a.btn-delete:hover {
-      box-shadow: 0 0 20px rgba(255,65,108,0.8);
+      background: linear-gradient(135deg, #c62828, #d32f2f);
+      box-shadow: 0 4px 12px rgba(244, 67, 54, 0.25);
     }
 
     .btn-create {
@@ -180,9 +140,9 @@
       width: 100%;
       padding: 14px;
       border: none;
-      background: linear-gradient(90deg, #00ffa3, #00e5ff);
-      color: #0f0f1a;
-      font-size: 1.1em;
+      background: linear-gradient(135deg, #7b5cf7, #b57aff);
+      color: white;
+      font-size: 1.05em;
       border-radius: 10px;
       font-weight: 600;
       transition: 0.3s;
@@ -190,36 +150,12 @@
       margin-top: 25px;
       text-transform: uppercase;
       text-decoration: none;
-      box-shadow: 0 0 15px rgba(0,255,255,0.4);
     }
+
     .btn-create:hover {
-      opacity: 0.9;
-      box-shadow: 0 0 25px rgba(0,255,255,0.7);
-    }
-
-    .search-form input {
-      border-radius: 8px;
-      border: 1px solid rgba(0,255,255,0.4);
-      background: rgba(255,255,255,0.08);
-      color: #fff;
-    }
-    .search-form input:focus {
-      outline: none;
-      border-color: #00e5ff;
-      box-shadow: 0 0 10px #00e5ff;
-    }
-
-    .search-form button {
-      background: linear-gradient(90deg, #00ffa3, #00e5ff);
-      border: none;
-      color: #0f0f1a;
-      font-weight: 600;
-      border-radius: 8px;
-      padding: 8px 16px;
-      transition: 0.3s;
-    }
-    .search-form button:hover {
-      box-shadow: 0 0 15px #00e5ff;
+      background: linear-gradient(135deg, #6942f5, #a964ff);
+      box-shadow: 0 4px 12px rgba(123, 92, 247, 0.3);
+      transform: translateY(-1px);
     }
 
     .pagination-container {
@@ -227,13 +163,31 @@
       justify-content: center;
       margin-top: 25px;
     }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .dashboard-container {
+        padding: 25px;
+        margin: 20px;
+      }
+
+      .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      table th, table td {
+        font-size: 0.9em;
+      }
+
+      .btn-create {
+        font-size: 0.95em;
+      }
+    }
   </style>
 </head>
 <body>
-  <ul class="circles">
-    <li></li><li></li><li></li><li></li><li></li>
-    <li></li><li></li><li></li><li></li><li></li>
-  </ul>
 
   <div class="dashboard-container">
     <div class="dashboard-header">
@@ -252,14 +206,8 @@
     <?php endif; ?>
 
     <div class="table-card">
-      <form action="<?= site_url('users'); ?>" method="get" class="d-flex mb-3 search-form">
-        <?php $q = isset($_GET['q']) ? $_GET['q'] : ''; ?>
-        <input name="q" type="text" class="form-control me-2" placeholder="Search" value="<?= html_escape($q); ?>">
-        <button type="submit">Search</button>
-      </form>
-
       <div class="table-responsive">
-        <table class="table table-bordered table-hover">
+        <table class="table table-bordered table-hover align-middle">
           <tr>
             <th>ID</th>
             <th>Name</th>
@@ -267,33 +215,42 @@
             <?php if ($logged_in_user['role'] === 'admin'): ?>
               <th>Password</th>
               <th>Role</th>
+              <th>Action</th>
+            <?php else: ?>
+              <th>Action</th>
             <?php endif; ?>
-            <th>Action</th>
           </tr>
-          <?php foreach ($user as $user): ?>
+
+          <?php foreach ($user as $u): ?>
           <tr>
-            <td><?= html_escape($user['id']); ?></td>
-            <td><?= html_escape($user['username']); ?></td>
-            <td><?= html_escape($user['email']); ?></td>
+            <td><?= html_escape($u['id']); ?></td>
+            <td><?= html_escape($u['username']); ?></td>
+            <td><?= html_escape($u['email']); ?></td>
             <?php if ($logged_in_user['role'] === 'admin'): ?>
               <td>*******</td>
-              <td><?= html_escape($user['role']); ?></td>
+              <td><?= html_escape($u['role']); ?></td>
+              <td>
+                <a href="<?= site_url('/users/update/'.$u['id']); ?>" class="btn-action btn-update">Update</a>
+                <a href="<?= site_url('/users/delete/'.$u['id']); ?>" class="btn-action btn-delete" onclick="return confirm('Are you sure you want to delete this user?');">Delete</a>
+              </td>
+            <?php else: ?>
+              <td>
+                <span class="text-muted">View Only</span>
+              </td>
             <?php endif; ?>
-            <td>
-              <a href="<?= site_url('/users/update/'.$user['id']); ?>" class="btn-action btn-update">Update</a>
-              <a href="<?= site_url('/users/delete/'.$user['id']); ?>" class="btn-action btn-delete">Delete</a>
-            </td>
           </tr>
           <?php endforeach; ?>
         </table>
       </div>
 
       <div class="pagination-container">
-        <?php echo $page; ?>
+        <?= $page; ?>
       </div>
     </div>
 
-    <a href="<?= site_url('users/create'); ?>" class="btn-create">+ Create New User</a>
+    <?php if ($logged_in_user['role'] === 'admin'): ?>
+      <a href="<?= site_url('users/create'); ?>" class="btn-create">+ Create New User</a>
+    <?php endif; ?>
   </div>
 </body>
 </html>

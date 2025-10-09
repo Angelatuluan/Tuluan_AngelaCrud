@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Register | Gradient Glass</title>
+  <title>Create User | Gradient Glass</title>
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -26,7 +26,7 @@
       overflow: hidden;
     }
 
-    /* Floating gradient circles for depth */
+    /* Floating gradient circles for subtle background depth */
     .bg-circle {
       position: absolute;
       border-radius: 50%;
@@ -35,6 +35,7 @@
       animation: float 12s ease-in-out infinite alternate;
       z-index: 0;
     }
+
     .bg-circle:nth-child(1) {
       width: 250px;
       height: 250px;
@@ -42,6 +43,7 @@
       top: 10%;
       left: 15%;
     }
+
     .bg-circle:nth-child(2) {
       width: 300px;
       height: 300px;
@@ -50,6 +52,7 @@
       right: 10%;
       animation-delay: 2s;
     }
+
     @keyframes float {
       from {
         transform: translateY(0px);
@@ -59,8 +62,8 @@
       }
     }
 
-    /* Register Card */
-    .register {
+    /* Glass Card for Create User */
+    .create-user {
       position: relative;
       width: 420px;
       padding: 45px 40px;
@@ -84,7 +87,7 @@
       }
     }
 
-    .register h2 {
+    .create-user h2 {
       text-align: center;
       font-size: 2em;
       font-weight: 600;
@@ -99,10 +102,9 @@
       margin-bottom: 20px;
     }
 
-    .inputBox input,
-    .inputBox select {
+    .inputBox input {
       width: 100%;
-      padding: 14px 45px 14px 15px;
+      padding: 14px 15px;
       font-size: 1em;
       color: #fff;
       background: rgba(255, 255, 255, 0.15);
@@ -112,8 +114,7 @@
       transition: 0.3s ease;
     }
 
-    .inputBox input:focus,
-    .inputBox select:focus {
+    .inputBox input:focus {
       background: rgba(255, 255, 255, 0.25);
       border-color: #fff;
     }
@@ -122,24 +123,8 @@
       color: #e0e0e0;
     }
 
-    .toggle-password {
-      position: absolute;
-      right: 15px;
-      top: 50%;
-      transform: translateY(-50%);
-      cursor: pointer;
-      font-size: 1.1em;
-      color: #fff;
-      opacity: 0.8;
-      transition: 0.3s;
-    }
-
-    .toggle-password:hover {
-      opacity: 1;
-    }
-
     /* Button */
-    .register button {
+    button {
       width: 100%;
       padding: 14px;
       border: none;
@@ -154,18 +139,19 @@
       box-shadow: 0 0 10px rgba(37, 117, 252, 0.5);
     }
 
-    .register button:hover {
+    button:hover {
       background: linear-gradient(135deg, #2575fc, #6a11cb);
       transform: translateY(-2px);
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
     }
 
-    .group {
+    /* Link Section */
+    .link-wrapper {
       text-align: center;
       margin-top: 20px;
     }
 
-    .group a {
+    .link-wrapper a {
       font-size: 0.95em;
       color: #fff;
       text-decoration: none;
@@ -173,11 +159,10 @@
       transition: 0.3s;
     }
 
-    .group a:hover {
+    .link-wrapper a:hover {
       opacity: 1;
       text-decoration: underline;
     }
-
   </style>
 </head>
 <body>
@@ -185,59 +170,36 @@
   <div class="bg-circle"></div>
   <div class="bg-circle"></div>
 
-  <!-- Register Card -->
-  <div class="register">
-    <h2>Create Account</h2>
-
-    <form method="POST" action="<?= site_url('auth/register'); ?>">
+  <!-- Create User Card -->
+  <div class="create-user">
+    <h2>Create User</h2>
+    <form method="POST" action="<?= site_url('users/create'); ?>">
       <div class="inputBox">
-        <input type="text" name="username" placeholder="Username" required />
+        <input
+          type="text"
+          name="username"
+          placeholder="Username"
+          required
+          value="<?= isset($username) ? html_escape($username) : '' ?>"
+        />
       </div>
 
       <div class="inputBox">
-        <input type="email" name="email" placeholder="Email" required />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          required
+          value="<?= isset($email) ? html_escape($email) : '' ?>"
+        />
       </div>
 
-      <div class="inputBox">
-        <input type="password" id="password" name="password" placeholder="Password" required />
-        <i class="fa-solid fa-eye toggle-password" id="togglePassword"></i>
-      </div>
-
-      <div class="inputBox">
-        <input type="password" id="confirmPassword" name="confirm_password" placeholder="Confirm Password" required />
-        <i class="fa-solid fa-eye toggle-password" id="toggleConfirmPassword"></i>
-      </div>
-
-      <div class="inputBox">
-        <select name="role" required>
-          <option value="user" selected>User</option>
-          <option value="admin">Admin</option>
-        </select>
-      </div>
-
-      <button type="submit">Register</button>
+      <button type="submit">Create User</button>
     </form>
 
-    <div class="group">
-      <p>Already have an account? <a href="<?= site_url('auth/login'); ?>">Login here</a></p>
+    <div class="link-wrapper">
+      <a href="<?= site_url('/users'); ?>">Return to Home</a>
     </div>
   </div>
-
-  <script>
-    function toggleVisibility(toggleId, inputId) {
-      const toggle = document.getElementById(toggleId);
-      const input = document.getElementById(inputId);
-
-      toggle.addEventListener("click", function () {
-        const type = input.getAttribute("type") === "password" ? "text" : "password";
-        input.setAttribute("type", type);
-        this.classList.toggle("fa-eye");
-        this.classList.toggle("fa-eye-slash");
-      });
-    }
-
-    toggleVisibility("togglePassword", "password");
-    toggleVisibility("toggleConfirmPassword", "confirmPassword");
-  </script>
 </body>
 </html>
