@@ -173,6 +173,26 @@
       <a href="<?= site_url('auth/logout'); ?>"><button class="logout-btn">Logout</button></a>
     </div>
 
+    <form method="get" action="<?= site_url('users'); ?>" style="display: flex; gap: 8px;">
+        <input 
+            type="text" 
+            name="q" 
+            value="<?= isset($q) ? htmlspecialchars($q) : ''; ?>" 
+            placeholder="Search user..." 
+            style="padding: 8px 12px; border: 1px solid #ccc; border-radius: 8px; outline: none; transition: 0.3s;"
+            onfocus="this.style.borderColor='#dc70c5ff'" 
+            onblur="this.style.borderColor='#ccc'"
+        >
+        <button 
+            type="submit" 
+            style="background-color: #dc70c5ff; color: white; border: none; padding: 8px 14px; border-radius: 8px; cursor: pointer; transition: 0.3s;"
+            onmouseover="this.style.backgroundColor='#dc70c5ff'" 
+            onmouseout="this.style.backgroundColor='#dc70c5ff'"
+        >
+             Search
+        </button>
+    </form>
+
     <?php if(!empty($logged_in_user)): ?>
       <div class="user-status">
         <strong>Welcome:</strong> <?= html_escape($logged_in_user['username']); ?>
