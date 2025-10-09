@@ -19,94 +19,94 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      background: linear-gradient(135deg, #f7f4ff 0%, #ebe3ff 100%);
+      background: linear-gradient(135deg, #f3e5f5, #e1bee7);
     }
 
     .create-user {
-      background: #fff;
-      border-radius: 16px;
-      padding: 40px 35px;
       width: 400px;
-      box-shadow: 0 8px 25px rgba(120, 90, 200, 0.15);
-      transition: all 0.3s ease;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(106, 27, 154, 0.15);
+      padding: 40px 35px;
+      text-align: center;
+      transition: 0.3s ease;
     }
 
     .create-user:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 35px rgba(120, 90, 200, 0.25);
+      box-shadow: 0 12px 35px rgba(123, 31, 162, 0.2);
+      transform: translateY(-2px);
     }
 
     .create-user h2 {
-      text-align: center;
       font-size: 1.9em;
       font-weight: 600;
-      color: #5b3cc4;
+      color: #6a1b9a;
       margin-bottom: 25px;
-      letter-spacing: 0.5px;
     }
 
-    .inputBox {
-      position: relative;
-      margin-bottom: 20px;
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
     }
 
     .inputBox input {
       width: 100%;
-      padding: 14px 16px;
+      padding: 14px 15px;
       font-size: 1em;
       color: #333;
-      background: #f9f9ff;
-      border: 1px solid #d9d3f7;
-      border-radius: 10px;
-      transition: 0.25s;
+      background: #f8f9fa;
+      border: 1px solid #d7c2e6;
+      border-radius: 8px;
+      outline: none;
+      transition: all 0.3s ease;
     }
 
     .inputBox input:focus {
-      border-color: #7b5cf7;
+      border-color: #8e24aa;
+      box-shadow: 0 0 0 3px rgba(142, 36, 170, 0.15);
       background: #fff;
-      box-shadow: 0 0 0 3px rgba(123, 92, 247, 0.15);
-      outline: none;
     }
 
     .inputBox input::placeholder {
-      color: #aaa;
+      color: #999;
     }
 
     button {
       width: 100%;
       padding: 14px;
       border: none;
-      border-radius: 10px;
-      background: linear-gradient(90deg, #7b5cf7, #b57aff);
-      color: #fff;
+      background: linear-gradient(135deg, #8e24aa, #ab47bc);
+      color: white;
       font-size: 1.05em;
       font-weight: 600;
+      border-radius: 8px;
       cursor: pointer;
       transition: all 0.3s ease;
-      text-transform: uppercase;
       letter-spacing: 0.5px;
     }
 
     button:hover {
-      background: linear-gradient(90deg, #6942f5, #a964ff);
-      box-shadow: 0 0 12px rgba(123, 92, 247, 0.3);
+      background: linear-gradient(135deg, #7b1fa2, #9c27b0);
+      box-shadow: 0 4px 12px rgba(156, 39, 176, 0.25);
+      transform: translateY(-1px);
     }
 
     .link-wrapper {
       text-align: center;
-      margin-top: 18px;
+      margin-top: 20px;
     }
 
     .link-wrapper a {
       font-size: 0.95em;
-      color: #7b5cf7;
+      color: #8e24aa;
       text-decoration: none;
-      transition: 0.3s;
+      transition: color 0.3s ease;
     }
 
     .link-wrapper a:hover {
       text-decoration: underline;
-      color: #5b3cc4;
+      color: #6a1b9a;
     }
   </style>
 </head>
@@ -126,7 +126,7 @@
     </form>
 
     <div class="link-wrapper">
-      <a href="<?= site_url('/users'); ?>">Return to Home</a>
+      <a href="<?= site_url('/users'); ?>">← Return to Home</a>
     </div>
   </div>
 </body>

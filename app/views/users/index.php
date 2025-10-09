@@ -17,7 +17,7 @@
 
     body {
       min-height: 100vh;
-      background: linear-gradient(135deg, #f7f4ff 0%, #ebe3ff 100%);
+      background: linear-gradient(135deg, #f3e5f5, #e1bee7);
       color: #333;
       overflow-x: hidden;
     }
@@ -28,13 +28,13 @@
       margin: 60px auto;
       padding: 40px;
       background: #ffffff;
-      border-radius: 18px;
-      box-shadow: 0 8px 25px rgba(120, 90, 200, 0.15);
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(106, 27, 154, 0.15);
       transition: 0.3s ease;
     }
 
     .dashboard-container:hover {
-      box-shadow: 0 12px 35px rgba(120, 90, 200, 0.2);
+      box-shadow: 0 12px 35px rgba(123, 31, 162, 0.2);
       transform: translateY(-2px);
     }
 
@@ -48,32 +48,32 @@
     .dashboard-header h2 {
       font-size: 1.9em;
       font-weight: 600;
-      color: #5b3cc4;
+      color: #6a1b9a;
     }
 
     .logout-btn {
       padding: 10px 18px;
       border: none;
       border-radius: 8px;
-      background: linear-gradient(135deg, #7b5cf7, #b57aff);
+      background: linear-gradient(135deg, #8e24aa, #ab47bc);
       color: white;
       font-weight: 600;
       transition: 0.3s;
     }
 
     .logout-btn:hover {
-      background: linear-gradient(135deg, #6942f5, #a964ff);
-      box-shadow: 0 4px 12px rgba(123, 92, 247, 0.3);
+      background: linear-gradient(135deg, #7b1fa2, #9c27b0);
+      box-shadow: 0 4px 12px rgba(156, 39, 176, 0.25);
       transform: translateY(-1px);
     }
 
     .user-status {
-      background: #f3ecff;
-      border-left: 4px solid #7b5cf7;
+      background: #f3e5f5;
+      border-left: 4px solid #8e24aa;
       padding: 12px 18px;
       border-radius: 8px;
       margin-bottom: 25px;
-      color: #5b3cc4;
+      color: #6a1b9a;
       font-weight: 500;
     }
 
@@ -91,17 +91,17 @@
     }
 
     th {
-      background: #f3ecff;
-      color: #5b3cc4;
+      background: #f3e5f5;
+      color: #6a1b9a;
       text-transform: uppercase;
       font-weight: 600;
       padding: 12px;
-      border-bottom: 2px solid #e0d6ff;
+      border-bottom: 2px solid #e1bee7;
     }
 
     td {
       padding: 10px;
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid #e0e0e0;
       vertical-align: middle;
     }
 
@@ -118,12 +118,12 @@
     }
 
     a.btn-update {
-      background: linear-gradient(135deg, #7b5cf7, #b57aff);
+      background: linear-gradient(135deg, #8e24aa, #ab47bc);
     }
 
     a.btn-update:hover {
-      background: linear-gradient(135deg, #6942f5, #a964ff);
-      box-shadow: 0 4px 12px rgba(123, 92, 247, 0.25);
+      background: linear-gradient(135deg, #7b1fa2, #9c27b0);
+      box-shadow: 0 4px 12px rgba(156, 39, 176, 0.25);
     }
 
     a.btn-delete {
@@ -140,7 +140,7 @@
       width: 100%;
       padding: 14px;
       border: none;
-      background: linear-gradient(135deg, #7b5cf7, #b57aff);
+      background: linear-gradient(135deg, #8e24aa, #ab47bc);
       color: white;
       font-size: 1.05em;
       border-radius: 10px;
@@ -153,8 +153,8 @@
     }
 
     .btn-create:hover {
-      background: linear-gradient(135deg, #6942f5, #a964ff);
-      box-shadow: 0 4px 12px rgba(123, 92, 247, 0.3);
+      background: linear-gradient(135deg, #7b1fa2, #9c27b0);
+      box-shadow: 0 4px 12px rgba(156, 39, 176, 0.25);
       transform: translateY(-1px);
     }
 
@@ -162,28 +162,6 @@
       display: flex;
       justify-content: center;
       margin-top: 25px;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .dashboard-container {
-        padding: 25px;
-        margin: 20px;
-      }
-
-      .dashboard-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
-
-      table th, table td {
-        font-size: 0.9em;
-      }
-
-      .btn-create {
-        font-size: 0.95em;
-      }
     }
   </style>
 </head>

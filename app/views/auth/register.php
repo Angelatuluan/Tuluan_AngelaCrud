@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Create User | Gradient Glass</title>
+  <title>Register | Purple Glow</title>
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -22,64 +22,32 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-      overflow: hidden;
+      background: linear-gradient(135deg, #a56eff, #7b42f6, #b892ff);
+      background-size: 200% 200%;
+      animation: gradientFlow 6s ease infinite;
     }
 
-    /* Floating gradient circles for subtle background depth */
-    .bg-circle {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      opacity: 0.6;
-      animation: float 12s ease-in-out infinite alternate;
-      z-index: 0;
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
-    .bg-circle:nth-child(1) {
-      width: 250px;
-      height: 250px;
-      background: #ff9ff3;
-      top: 10%;
-      left: 15%;
-    }
-
-    .bg-circle:nth-child(2) {
-      width: 300px;
-      height: 300px;
-      background: #18dcff;
-      bottom: 15%;
-      right: 10%;
-      animation-delay: 2s;
-    }
-
-    @keyframes float {
-      from {
-        transform: translateY(0px);
-      }
-      to {
-        transform: translateY(-30px);
-      }
-    }
-
-    /* Glass Card for Create User */
-    .create-user {
-      position: relative;
+    .register {
       width: 420px;
       padding: 45px 40px;
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 20px;
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
-      z-index: 2;
-      animation: fadeIn 1.2s ease;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 18px;
+      border: 1px solid rgba(210, 195, 255, 0.4);
+      box-shadow: 0 8px 30px rgba(123, 66, 246, 0.25);
+      animation: fadeIn 0.8s ease;
+      backdrop-filter: blur(8px);
     }
 
     @keyframes fadeIn {
       from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(25px);
       }
       to {
         opacity: 1;
@@ -87,48 +55,65 @@
       }
     }
 
-    .create-user h2 {
+    .register h2 {
       text-align: center;
-      font-size: 2em;
+      font-size: 1.9em;
       font-weight: 600;
       margin-bottom: 25px;
-      color: #fff;
-      letter-spacing: 1px;
+      color: #7b42f6;
+      letter-spacing: 0.5px;
     }
 
-    /* Input Fields */
     .inputBox {
       position: relative;
       margin-bottom: 20px;
     }
 
-    .inputBox input {
+    .inputBox input,
+    .inputBox select {
       width: 100%;
-      padding: 14px 15px;
+      padding: 14px 45px 14px 15px;
       font-size: 1em;
-      color: #fff;
-      background: rgba(255, 255, 255, 0.15);
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #333;
+      background: #f8f6fc;
+      border: 1px solid #d5c9ff;
       outline: none;
       border-radius: 10px;
       transition: 0.3s ease;
+      appearance: none;
     }
 
-    .inputBox input:focus {
-      background: rgba(255, 255, 255, 0.25);
-      border-color: #fff;
+    .inputBox input:focus,
+    .inputBox select:focus {
+      border-color: #7b42f6;
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(123, 66, 246, 0.15);
     }
 
     .inputBox input::placeholder {
-      color: #e0e0e0;
+      color: #999;
     }
 
-    /* Button */
-    button {
+    .toggle-password {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      font-size: 1.1em;
+      color: #7b42f6;
+      transition: 0.3s;
+    }
+
+    .toggle-password:hover {
+      color: #5d2ed2;
+    }
+
+    .register button {
       width: 100%;
       padding: 14px;
       border: none;
-      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      background: linear-gradient(135deg, #7b42f6, #9d6cff);
       color: #fff;
       font-size: 1.1em;
       font-weight: 600;
@@ -136,70 +121,88 @@
       cursor: pointer;
       transition: 0.3s ease;
       text-transform: uppercase;
-      box-shadow: 0 0 10px rgba(37, 117, 252, 0.5);
+      letter-spacing: 0.5px;
     }
 
-    button:hover {
-      background: linear-gradient(135deg, #2575fc, #6a11cb);
+    .register button:hover {
+      background: linear-gradient(135deg, #6930c3, #8a4ef8);
       transform: translateY(-2px);
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+      box-shadow: 0 4px 12px rgba(123, 66, 246, 0.3);
     }
 
-    /* Link Section */
-    .link-wrapper {
+    .group {
       text-align: center;
       margin-top: 20px;
     }
 
-    .link-wrapper a {
+    .group a {
       font-size: 0.95em;
-      color: #fff;
+      color: #7b42f6;
       text-decoration: none;
-      opacity: 0.8;
+      font-weight: 500;
       transition: 0.3s;
     }
 
-    .link-wrapper a:hover {
-      opacity: 1;
+    .group a:hover {
       text-decoration: underline;
+      color: #5d2ed2;
     }
   </style>
 </head>
 <body>
-  <!-- Floating Gradient Circles -->
-  <div class="bg-circle"></div>
-  <div class="bg-circle"></div>
 
-  <!-- Create User Card -->
-  <div class="create-user">
-    <h2>Create User</h2>
-    <form method="POST" action="<?= site_url('users/create'); ?>">
+  <div class="register">
+    <h2>Create Account</h2>
+
+    <form method="POST" action="<?= site_url('auth/register'); ?>">
       <div class="inputBox">
-        <input
-          type="text"
-          name="username"
-          placeholder="Username"
-          required
-          value="<?= isset($username) ? html_escape($username) : '' ?>"
-        />
+        <input type="text" name="username" placeholder="Username" required />
       </div>
 
       <div class="inputBox">
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          required
-          value="<?= isset($email) ? html_escape($email) : '' ?>"
-        />
+        <input type="email" name="email" placeholder="Email" required />
       </div>
 
-      <button type="submit">Create User</button>
+      <div class="inputBox">
+        <input type="password" id="password" name="password" placeholder="Password" required />
+        <i class="fa-solid fa-eye toggle-password" id="togglePassword"></i>
+      </div>
+
+      <div class="inputBox">
+        <input type="password" id="confirmPassword" name="confirm_password" placeholder="Confirm Password" required />
+        <i class="fa-solid fa-eye toggle-password" id="toggleConfirmPassword"></i>
+      </div>
+
+      <div class="inputBox">
+        <select name="role" required>
+          <option value="user" selected>User</option>
+          <option value="admin">Admin</option>
+        </select>
+      </div>
+
+      <button type="submit">Register</button>
     </form>
 
-    <div class="link-wrapper">
-      <a href="<?= site_url('/users'); ?>">Return to Home</a>
+    <div class="group">
+      <p>Already have an account? <a href="<?= site_url('auth/login'); ?>">Login here</a></p>
     </div>
   </div>
+
+  <script>
+    function toggleVisibility(toggleId, inputId) {
+      const toggle = document.getElementById(toggleId);
+      const input = document.getElementById(inputId);
+
+      toggle.addEventListener("click", function () {
+        const type = input.getAttribute("type") === "password" ? "text" : "password";
+        input.setAttribute("type", type);
+        this.classList.toggle("fa-eye");
+        this.classList.toggle("fa-eye-slash");
+      });
+    }
+
+    toggleVisibility("togglePassword", "password");
+    toggleVisibility("toggleConfirmPassword", "confirmPassword");
+  </script>
 </body>
 </html>
